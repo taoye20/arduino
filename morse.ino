@@ -3,8 +3,8 @@
 String str="";   //储存读出的摩尔码
 
 Morse morse(13);
-void setup() {
-  
+void setup()
+{
   Serial.begin(9600);
 }
 
@@ -12,13 +12,13 @@ void loop() {
   while(Serial.available()>0)
   {
      int t;
-   bian(Serial.read());   //变码
-    for(t=0;t<4;t++)
-    {
-      if(str[t]=='*')
-      morse.dot();      
+     bian(Serial.read());   //变码
+     for(t=0;t<4;t++)
+    {     
       if(str[t]=='-')
-      morse.dash();      
+      morse.dash();
+      if(str[t]=='*')
+      morse.dot(); 
       delay(15);         //选择函数
     }
     delay(400);          
