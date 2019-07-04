@@ -1,7 +1,6 @@
 #include <Morse.h>
 
-String str="";   //储存读出的摩尔码
-
+String s="";   //储存读出的摩尔码
 Morse morse(13);
 void setup()
 {
@@ -15,14 +14,14 @@ void loop() {
      bian(Serial.read());   //变码
      for(t=0;t<4;t++)
     {     
-      if(str[t]=='-')
+      if(s[t]=='-')
       morse.dash();
-      if(str[t]=='*')
+      if(s[t]=='*')
       morse.dot(); 
       delay(15);         //选择函数
     }
     delay(400);          
-    str="";              
+    s="";              
   }
 }
 
@@ -30,33 +29,33 @@ void bian(int n)
 {
   switch(n)
   {
-    case 97:str="*-  ";break;   //a
-    case 98:str="-***";break;   //b
-    case 99:str="-*-*";break;   //c
-    case 100:str="-** ";break;  //d
-    case 101:str="*   ";break;  //e
-    case 102:str="**-*";break;  //f
-    case 103:str="--* ";break;  //g
-    case 104:str="****";break;  //h
-    case 105:str="**  ";break;  //i
-    case 106:str="*---";break;  //j
-    case 107:str="-*- ";break;  //k
-    case 108:str="*-**";break;  //l
-    case 109:str="--  ";break;  //m
-    case 110:str="-*  ";break;  //n
-    case 111:str="--- ";break;  //o
-    case 112:str="*--*";break;  //p
-    case 113:str="--*-";break;  //r
-    case 115:str="*** ";break;  //s
-    case 116:str="-   ";break;  //t
-    case 117:str="**- ";break;  //u
-    case 118:str="***-";break;  //v
-    case 119:str="*-- ";break;  //w
-    case 120:str="-**-";break;  //x
-    case 121:str="-*--";break;  //y
-    case 122:str="--**";break;  //z
-    case 32:str="*-*-";break;  //空格
-    case 10:str="----";break;  //回车
+    case 97:s="*-   ";break;   //a
+    case 98:s="-***";break;   //b
+    case 99:s="-*-*";break;   //c
+    case 100:s="-** ";break;  //d
+    case 101:s="*   ";break;  //e
+    case 102:s="**-*";break;  //f
+    case 103:s="--* ";break;  //g
+    case 104:s="****";break;  //h
+    case 105:s="**  ";break;  //i
+    case 106:s="*---";break;  //j
+    case 107:s="-*- ";break;  //k
+    case 108:s="*-**";break;  //l
+    case 109:s="--  ";break;  //m
+    case 110:s="-*  ";break;  //n
+    case 111:s="--- ";break;  //o
+    case 112:s="*--*";break;  //p
+    case 113:s="--*-";break;  //r
+    case 115:s="*** ";break;  //s
+    case 116:s="-   ";break;  //t
+    case 117:s="**- ";break;  //u
+    case 118:s="***-";break;  //v
+    case 119:s="*-- ";break;  //w
+    case 120:s="-**-";break;  //x
+    case 121:s="-*--";break;  //y
+    case 122:s="--**";break;  //z
+    case 32:s="*-*-";break;  //空格
+    case 10:s="----";break;  //回车
     default:break;
   }
 }
